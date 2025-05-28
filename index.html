@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>!Luck</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a3f57f5b69.js" crossorigin="anonymous"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -13,98 +14,186 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #111;
+      background: #111;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1.6;
+      background-image: url('mebnw.png'); 
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    header {
-      width: 100%;
-      padding: 3rem 1rem 1.5rem;
-      text-align: center;
-      font-size: 3rem;
-      font-weight: 700;
-      color: white;
-      border-bottom: 1px solid #333;
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.07) 0%, transparent 80%), repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 4px);
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .music-section {
-      width: 100%;
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 40px 20px;
       max-width: 900px;
-      padding: 2rem 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      margin: auto;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    .spotify-embed iframe {
-      width: 100%;
-      height: 352px;
-      border-radius: 12px;
-      border: none;
+    h1 {
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      letter-spacing: 2px;
+      animation: slideInDown 1s ease-out;
+    }
+
+    .spotify-embed {
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .spotify-embed:nth-of-type(2) {
+      animation-delay: 0.5s;
+    }
+
+    .spotify-embed:nth-of-type(3) {
+      animation-delay: 1s;
     }
 
     .bio {
-      width: 100%;
-      max-width: 700px;
+      font-size: 1.2rem;
       text-align: center;
-      font-size: 1.25rem;
-      padding: 3rem 1rem 2rem;
-      color: #ccc;
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
+      margin-top: 4rem;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 12px;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 1.2s;
+      opacity: 0;
+    }
+
+    .socials {
+      text-align: center;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1.4s;
+      opacity: 0;
+    }
+
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .socials a:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    .socials i {
+      font-size: 1.2rem;
     }
 
     footer {
-      width: 100%;
-      max-width: 700px;
       text-align: center;
+      font-size: 0.95rem;
+      color: #ccc;
       padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #777;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1.6s;
     }
 
-    footer span {
-      display: block;
-      margin: 0.5rem 0;
+    a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
 
-    @media (max-width: 600px) {
-      header {
-        font-size: 2.2rem;
+    a:hover {
+      color: #aaa;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-40px);
+        opacity: 0;
       }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
-      .bio {
-        font-size: 1.1rem;
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>!Luck</h1>
 
-  <header>!Luck</header>
-
-  <section class="music-section">
     <div class="spotify-embed">
-      <iframe src="https://open.spotify.com/embed/album/7FsomiJGhAp90XCXc3vxKq?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7FsomiJGhAp90XCXc3vxKq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
+
     <div class="spotify-embed">
-      <iframe src="https://open.spotify.com/embed/album/3GzLarREcmEPmtUVjmkpdr?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3GzLarREcmEPmtUVjmkpdr?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
-  </section>
 
-  <section class="bio">
-    New to this. Tap in.
-  </section>
+    <div class="bio">
+      <p>New to this. Tap in.</p>
+    </div>
 
-  <footer>
-    <span>Email – luckwastaken@gmail.com</span>
-    <span>Artist – !Luck</span>
-  </footer>
+    <div class="socials">
+      <a href="https://open.spotify.com/artist/4JMhV4uLsJwnIjAI4SvI4U?si=DSqkhey7SCSsrQprVKCFqg" target="_blank">
+        <i class="fab fa-spotify"></i> Spotify
+      </a>
+      <a href="https://www.instagram.com/dalton_neidert/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://music.youtube.com/channel/UCHpAh7KMK7vMWwLF7kcZ61g?si=BCT5QIeoddb5uNEy" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube Music
+      </a>
+      <a href="https://soundcloud.com/luckwastaken" target="_blank">
+        <i class="fab fa-soundcloud"></i> SoundCloud
+      </a>
+    </div>
 
+    <footer>
+      <p>Email — <a href="mailto:luckwastaken@gmail.com">luckwastaken@gmail.com</a></p>
+      <p>Artist — !Luck</p>
+    </footer>
+  </div>
 </body>
 </html>
-
