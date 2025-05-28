@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>!Luck</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 2rem 1rem;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00ffcc;
+      text-shadow: 2px 2px #000;
+    }
+
+    .track {
+      margin: 1.5rem 0;
+      width: 90%;
+      max-width: 600px;
+      background-color: #222;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .track h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #00ffcc;
+    }
+
+    .track iframe, .track audio {
+      width: 100%;
+      border: none;
+      margin-top: 0.5rem;
+      border-radius: 8px;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>!Luck</header>
+
+  <div class="track">
+    <h2>Track 1 – *Song Title*</h2>
+    <!-- Embed from SoundCloud, Spotify, or use <audio> for MP3 -->
+    <iframe 
+      src="https://open.spotify.com/embed/track/YOUR_TRACK_ID" 
+      height="80" 
+      allowtransparency="true" 
+      allow="encrypted-media">
+    </iframe>
+  </div>
+
+  <div class="track">
+    <h2>Track 2 – *Another Song*</h2>
+    <audio controls>
+      <source src="songs/song2.mp3" type="audio/mpeg">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+
+  <footer>
+    © 2025 !Luck — All rights reserved.
+  </footer>
+
+</body>
+</html>
