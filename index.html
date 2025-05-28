@@ -2,56 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>!Luck</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #111;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
+      line-height: 1.6;
     }
 
     header {
-      padding: 2rem 1rem;
-      font-size: 3rem;
-      font-weight: bold;
-      color: #00ffcc;
-      text-shadow: 2px 2px #000;
-    }
-
-    .track {
-      margin: 1.5rem 0;
-      width: 90%;
-      max-width: 600px;
-      background-color: #222;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    .track h2 {
-      margin-top: 0;
-      font-size: 1.5rem;
-      color: #00ffcc;
-    }
-
-    .track iframe, .track audio {
       width: 100%;
+      padding: 3rem 1rem 1.5rem;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      border-bottom: 1px solid #333;
+    }
+
+    .music-section {
+      width: 100%;
+      max-width: 900px;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .spotify-embed iframe {
+      width: 100%;
+      height: 352px;
+      border-radius: 12px;
       border: none;
-      margin-top: 0.5rem;
-      border-radius: 8px;
+    }
+
+    .bio {
+      width: 100%;
+      max-width: 700px;
+      text-align: center;
+      font-size: 1.25rem;
+      padding: 3rem 1rem 2rem;
+      color: #ccc;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
     }
 
     footer {
-      margin-top: auto;
-      padding: 2rem;
+      width: 100%;
+      max-width: 700px;
+      text-align: center;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #666;
+      color: #777;
+    }
+
+    footer span {
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 2.2rem;
+      }
+
+      .bio {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
@@ -59,28 +87,24 @@
 
   <header>!Luck</header>
 
-  <div class="track">
-    <h2>Track 1 – *Song Title*</h2>
-    <!-- Embed from SoundCloud, Spotify, or use <audio> for MP3 -->
-    <iframe 
-      src="https://open.spotify.com/embed/track/YOUR_TRACK_ID" 
-      height="80" 
-      allowtransparency="true" 
-      allow="encrypted-media">
-    </iframe>
-  </div>
+  <section class="music-section">
+    <div class="spotify-embed">
+      <iframe src="https://open.spotify.com/embed/album/7FsomiJGhAp90XCXc3vxKq?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="spotify-embed">
+      <iframe src="https://open.spotify.com/embed/album/3GzLarREcmEPmtUVjmkpdr?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
 
-  <div class="track">
-    <h2>Track 2 – *Another Song*</h2>
-    <audio controls>
-      <source src="songs/song2.mp3" type="audio/mpeg">
-      Your browser does not support the audio tag.
-    </audio>
-  </div>
+  <section class="bio">
+    New to this. Tap in.
+  </section>
 
   <footer>
-    © 2025 !Luck — All rights reserved.
+    <span>Email – luckwastaken@gmail.com</span>
+    <span>Artist – !Luck</span>
   </footer>
 
 </body>
 </html>
+
