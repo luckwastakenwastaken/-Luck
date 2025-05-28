@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>!Luck</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a3f57f5b69.js" crossorigin="anonymous"></script>
@@ -14,62 +14,48 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #0c0c0c;
+      background: #111;
       color: #fff;
-      background-image: url('mebnw.png');
+      background-image: url('mebnw.png'); 
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      overflow-x: hidden;
       position: relative;
+      overflow-x: hidden;
     }
 
     body::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 4px);
-      pointer-events: none;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.07) 0%, transparent 80%), repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 4px);
       mix-blend-mode: overlay;
+      pointer-events: none;
       z-index: 0;
     }
 
     .container {
       position: relative;
       z-index: 1;
-      max-width: 960px;
+      padding: 40px 20px;
+      max-width: 900px;
       margin: auto;
-      padding: 60px 20px;
-      animation: fadeIn 1.5s ease-out;
-    }
-
-    .artist-image {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin: 0 auto 30px;
-      display: block;
-      box-shadow: 0 0 25px rgba(255,255,255,0.3);
-      animation: pulse 2.5s infinite;
+      animation: fadeIn 2s ease-in-out;
     }
 
     h1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       text-align: center;
-      margin-bottom: 1rem;
-      letter-spacing: 3px;
-      animation: slideIn 1s ease-out;
+      margin-bottom: 2.5rem;
+      letter-spacing: 2px;
+      animation: slideInDown 1s ease-out;
     }
 
     .spotify-embed {
-      margin: 40px 0;
+      margin-bottom: 2rem;
       opacity: 0;
-      transform: translateY(40px);
-      animation: fadeUp 1.2s ease forwards;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
     }
 
     .spotify-embed:nth-of-type(2) {
@@ -83,45 +69,69 @@
     .bio {
       font-size: 1.2rem;
       text-align: center;
-      margin-top: 3rem;
-      line-height: 1.6;
-      opacity: 0;
+      margin-top: 4rem;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 12px;
       animation: fadeIn 1.5s ease forwards;
       animation-delay: 1.2s;
+      opacity: 0;
     }
 
     .socials {
       text-align: center;
-      margin-top: 2.5rem;
+      margin-top: 3rem;
       display: flex;
       justify-content: center;
-      gap: 2rem;
       flex-wrap: wrap;
+      gap: 1.2rem;
       animation: fadeIn 1s ease forwards;
       animation-delay: 1.4s;
       opacity: 0;
     }
 
     .socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.05);
       color: #fff;
-      font-size: 1.6rem;
-      transition: transform 0.3s ease, color 0.3s ease;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .socials a:hover {
-      color: #1db954;
-      transform: scale(1.2);
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    .socials i {
+      font-size: 1.2rem;
     }
 
     footer {
       text-align: center;
-      padding: 2rem 0;
-      margin-top: 4rem;
       font-size: 0.95rem;
-      color: #bbb;
+      color: #ccc;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
       opacity: 0;
       animation: fadeIn 1s ease forwards;
       animation-delay: 1.6s;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #aaa;
     }
 
     /* Animations */
@@ -130,33 +140,35 @@
       to { opacity: 1; }
     }
 
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 15px rgba(255,255,255,0.2); }
-      50% { box-shadow: 0 0 25px rgba(255,255,255,0.5); }
-      100% { box-shadow: 0 0 15px rgba(255,255,255,0.2); }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img class="artist-image" src="mebnw.png" alt="!Luck" />
     <h1>!Luck</h1>
 
     <div class="spotify-embed">
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7FsomiJGhAp90XCXc3vxKq?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7FsomiJGhAp90XCXc3vxKq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
     <div class="spotify-embed">
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3GzLarREcmEPmtUVjmkpdr?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3GzLarREcmEPmtUVjmkpdr?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
     <div class="bio">
@@ -165,16 +177,16 @@
 
     <div class="socials">
       <a href="https://open.spotify.com/artist/4JMhV4uLsJwnIjAI4SvI4U?si=DSqkhey7SCSsrQprVKCFqg" target="_blank">
-        <i class="fab fa-spotify"></i>
+        <i class="fab fa-spotify"></i> Spotify
       </a>
       <a href="https://www.instagram.com/dalton_neidert/" target="_blank">
-        <i class="fab fa-instagram"></i>
+        <i class="fab fa-instagram"></i> Instagram
       </a>
       <a href="https://music.youtube.com/channel/UCHpAh7KMK7vMWwLF7kcZ61g?si=BCT5QIeoddb5uNEy" target="_blank">
-        <i class="fab fa-youtube"></i>
+        <i class="fab fa-youtube"></i> YouTube Music
       </a>
       <a href="https://soundcloud.com/luckistaken" target="_blank">
-        <i class="fab fa-soundcloud"></i>
+        <i class="fab fa-soundcloud"></i> SoundCloud
       </a>
     </div>
 
