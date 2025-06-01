@@ -14,21 +14,18 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #111;
+      background: #111 url('/docs/assets/images/headerspotify.png') center center / cover repeat fixed;
       color: #fff;
-      background-image: url('mebnw.png'); 
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      position: relative;
       overflow-x: hidden;
+      position: relative;
     }
 
     body::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at center, rgba(255,255,255,0.07) 0%, transparent 80%), repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 4px);
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.07) 0%, transparent 80%), 
+                  repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 4px);
       mix-blend-mode: overlay;
       pointer-events: none;
       z-index: 0;
@@ -58,24 +55,22 @@
       animation: fadeUp 1s ease forwards;
     }
 
-    .spotify-embed:nth-of-type(2) {
-      animation-delay: 0.5s;
-    }
-
-    .spotify-embed:nth-of-type(3) {
-      animation-delay: 1s;
-    }
+    .spotify-embed:nth-of-type(2) { animation-delay: 0.5s; }
+    .spotify-embed:nth-of-type(3) { animation-delay: 1s; }
+    .spotify-embed:nth-of-type(4) { animation-delay: 1.5s; }
+    .spotify-embed:nth-of-type(5) { animation-delay: 2s; }
+    .spotify-embed:nth-of-type(6) { animation-delay: 2.5s; }
 
     .bio {
       font-size: 1.2rem;
       text-align: center;
       margin-top: 4rem;
       padding: 2rem;
-      background: rgba(0, 0, 0, 0.55);
       border-radius: 12px;
       animation: fadeIn 1.5s ease forwards;
-      animation-delay: 1.2s;
+      animation-delay: 3s;
       opacity: 0;
+      background: none;
     }
 
     .socials {
@@ -86,7 +81,7 @@
       flex-wrap: wrap;
       gap: 1.2rem;
       animation: fadeIn 1s ease forwards;
-      animation-delay: 1.4s;
+      animation-delay: 3.2s;
       opacity: 0;
     }
 
@@ -121,7 +116,7 @@
       border-top: 1px solid rgba(255,255,255,0.1);
       opacity: 0;
       animation: fadeIn 1s ease forwards;
-      animation-delay: 1.6s;
+      animation-delay: 3.4s;
     }
 
     a {
@@ -171,11 +166,24 @@
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3GzLarREcmEPmtUVjmkpdr?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
+    <!-- New songs added -->
+    <div class="spotify-embed">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7fW40r1l5u1RDNOdFRGOCj?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div class="spotify-embed">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/06FJj6XfY8mkddaZMectKt?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+    <div class="spotify-embed">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/522DDP0rkBelqbDDdSHI5Z?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
     <div class="bio">
       <p>New to this. Tap in.</p>
     </div>
 
-    <div class="socials">
+    <div class="socials" id="social-icons">
       <a href="https://open.spotify.com/artist/4JMhV4uLsJwnIjAI4SvI4U?si=DSqkhey7SCSsrQprVKCFqg" target="_blank">
         <i class="fab fa-spotify"></i> Spotify
       </a>
